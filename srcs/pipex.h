@@ -17,7 +17,7 @@
 # include <strings.h>
 # include <sys/wait.h>
 # include <errno.h>
-# include "libft/libft.h"
+# include "../libft/libft.h"
 # include <fcntl.h>
 
 char	*find_path(char **env);

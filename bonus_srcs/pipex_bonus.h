@@ -17,8 +17,8 @@
 # include <strings.h>
 # include <sys/wait.h>
 # include <errno.h>
-# include "libft/libft.h"
-# include "libft/get_next_line.h"
+# include "../libft/libft.h"
+# include "../libft/get_next_line.h"
 # include <fcntl.h>
 
 int		no_command(char *string);
