@@ -18,6 +18,6 @@ It aims to simulate the pipes in the bash command line.
   
 ### How to use
   1. Type make and let the Makefile do the compilation work ('make' for the mandatory part, 'make bonus for the bonus part').
-  2. For the mandatory part execute the program like this : ./pipex 'infile' cmd1 cmd2 'outfile'
-  3. For the first bonus part execute it this way : ./pipex 'infile' cmd1 cmd2 ... cmdn 'outfile'
-  4. For the second bonus part : ./pipex here_doc 'limiter' 'cmd1' 'cmd2' outfile
+  2. For the mandatory part execute the program like this : ./pipex 'infile' cmd1 cmd2 'outfile'.
+  3. For the first bonus part execute it this way : ./pipex 'infile' cmd1 cmd2 ... cmdn 'outfile'.
+  4. For the second bonus part : ./pipex here_doc 'limiter' 'cmd1' 'cmd2' outfile.
