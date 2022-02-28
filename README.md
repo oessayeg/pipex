@@ -8,7 +8,7 @@ It aims to simulate the pipes in the bash command line.
   * Simulate multiple pipes. (For the first bonus part) (< infile cmd1 | cmd2 .... | cmdn > outfile)
   * Simulate here_doc. (For the second bonus part) (cmd1 << limiter | cmd2 >> outfile)
 
-### Skills I've learnt from this project
+### What I've learnt from this project
   * Functionning of processes.
   * Functionning of redirection of any input and output.
   * Unix logic.
