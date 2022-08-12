@@ -11,6 +11,7 @@ It aims to simulate the pipes in the bash command line.
 ### What I've learnt from this project
   * Functionning of processes.
   * Functionning of redirection of any input and output.
+  * System calls.
   * Unix logic.
 
 ### Final grade
