@@ -35,4 +35,5 @@ int		check_file(char *file);
 int		command_check(char *command, char **env);
 int		check_path(char *command);
 int		len_to_space(char *str);
+int		check_ph(char *command);
 #endif

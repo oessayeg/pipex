@@ -24,7 +24,8 @@ void	child_process1(char **argv, char **env, int *fd)
 	if (fork() == 0)
 	{
 		close(fd[0]);
-		if (check_file(argv[1]) == 0 || command_check(argv[2], env) == 0)
+		if (check_file(argv[1]) == 0 || check_ph(argv[2]) == 0
+			|| command_check(argv[2], env) == 0)
 		{
 			close(fd[1]);
 			exit(errno);
@@ -50,7 +51,7 @@ void	child_process2(char **argv, char **env, int *fd)
 			close(fd[0]);
 			error_message(argv[4]);
 		}
-		else if (command_check(argv[3], env) == 0)
+		else if (check_ph(argv[3]) == 0 || command_check(argv[3], env) == 0)
 		{
 			close(fd[0]);
 			exit(errno);
