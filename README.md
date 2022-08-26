@@ -13,9 +13,6 @@ It aims to simulate the pipes in the bash command line.
   * Functionning of redirection of any input and output.
   * System calls.
   * Unix logic.
-
-### Final grade
-  125/100.
   
 ### How to use
   1. Type make and let the Makefile do the compilation work ('make' for the mandatory part, 'make bonus for the bonus part').
