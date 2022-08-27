@@ -45,9 +45,13 @@ int	is_in(char *command)
 	int	i;
 
 	i = -1;
-	while (command[++i])
+	while (command[++i] == ' ');
+	while (command[i] && command[i] != ' ')
+	{
 		if (command[i] == '/')
 			return (1);
+		i++;
+	}
 	return (0);
 }
 
