@@ -45,7 +45,7 @@ void	first_child(char **argv, char **env)
 			perror(argv[1]);
 			exit(errno);
 		}
-		if (command_check(argv[2], env) == 0)
+		if (check_ph(argv[2]) == 0 || command_check(argv[2], env) == 0)
 			exit(errno);
 		close(fd[0]);
 		dup2(f_file, 0);
@@ -69,7 +69,7 @@ void	middle_child(char **argv, char **env, int i)
 	{
 		close(fd[0]);
 		dup2(fd[1], 1);
-		if (command_check(argv[i], env) == 0)
+		if (check_ph(argv[i]) == 0 || command_check(argv[i], env) == 0)
 			exit(errno);
 		exec(env, argv[i]);
 		exit(errno);
@@ -93,9 +93,31 @@ void	final_child(char **argv, char **env, int argc)
 			perror(argv[argc - 1]);
 			exit(errno);
 		}
-		if (command_check(argv[argc - 2], env) == 0)
+		if (check_ph(argv[argc - 2]) == 0 || command_check(argv[argc - 2], env) == 0)
 			exit(errno);
 		dup2(f_out, 1);
 		exec(env, argv[argc - 2]);
 	}
+}
+
+int	check_ph(char *command)
+{
+	int	i;
+	char	**comm_split;
+
+	i = -1;
+	while (command[++i] == ' ');
+	if (command[i] == '/')
+	{
+		comm_split = ft_split(command, ' ');
+		if (access(comm_split[0], F_OK) != 0
+			|| access(comm_split[0], X_OK) != 0)
+		{
+			perror(comm_split[0]);
+			free_all(comm_split);
+			return (0);
+		}
+		free_all(comm_split);
+	}
+	return (1);
 }

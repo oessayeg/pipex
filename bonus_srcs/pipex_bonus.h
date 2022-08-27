@@ -21,6 +21,7 @@
 # include "../libft/get_next_line.h"
 # include <fcntl.h>
 
+int		check_ph(char *command);
 int		no_command(char *string);
 int		not_found(char *read_string, char *lim);
 int		check_here_doc(char *string);
