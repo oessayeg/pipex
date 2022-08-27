@@ -40,14 +40,22 @@ int	check_file(char *file)
 	return (1);
 }
 
-int	check_ph(char *command)
+int	is_in(char *command)
 {
 	int	i;
-	char	**comm_split;
 
 	i = -1;
-	while (command[++i] == ' ');
-	if (command[i] == '/')
+	while (command[++i])
+		if (command[i] == '/')
+			return (1);
+	return (0);
+}
+
+int	check_ph(char *command)
+{
+	char	**comm_split;
+	
+	if (is_in(command))
 	{
 		comm_split = ft_split(command, ' ');
 		if (access(comm_split[0], F_OK) != 0 
