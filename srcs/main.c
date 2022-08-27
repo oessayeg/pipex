@@ -50,19 +50,14 @@ int	check_ph(char *command)
 	if (command[i] == '/')
 	{
 		comm_split = ft_split(command, ' ');
-		if (access(comm_split[0], F_OK) == 0
-			&& access(comm_split[0], X_OK) == 0)
-		{
-			free_all(comm_split);
-			return (1);
-		}
-		else if (access(comm_split[0], F_OK) != 0 
+		if (access(comm_split[0], F_OK) != 0 
 			|| access(comm_split[0], X_OK) != 0)
 		{
 			perror(comm_split[0]);
 			free_all(comm_split);
 			return (0);
 		}
+		free_all(comm_split);
 	}
 	return (1);
 }
